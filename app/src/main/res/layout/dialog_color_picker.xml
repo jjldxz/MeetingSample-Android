@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="event"
+            type="com.jjl.dxz.platform.meeting.widget.dialog.ColorPickerDialog.Event" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/tv_0000ff"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="#0000ff"
+            android:onClick="@{()->event.color(`#0000ff`)}"
+            app:layout_constraintEnd_toStartOf="@id/tv_f56c6c"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_f56c6c"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="#f56c6c"
+            android:onClick="@{()->event.color(`#f56c6c`)}"
+            app:layout_constraintEnd_toStartOf="@id/tv_67c23a"
+            app:layout_constraintStart_toEndOf="@id/tv_0000ff"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_67c23a"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="#67c23a"
+            android:onClick="@{()->event.color(`#67c23a`)}"
+            app:layout_constraintEnd_toStartOf="@id/tv_f701ef"
+            app:layout_constraintStart_toEndOf="@id/tv_f56c6c"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_f701ef"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="#f701ef"
+            android:onClick="@{()->event.color(`#f701ef`)}"
+            app:layout_constraintEnd_toStartOf="@id/tv_57d437"
+            app:layout_constraintStart_toEndOf="@id/tv_67c23a"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_57d437"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="#57d437"
+            android:onClick="@{()->event.color(`#57d437`)}"
+            app:layout_constraintEnd_toStartOf="@id/tv_008df8"
+            app:layout_constraintStart_toEndOf="@id/tv_f701ef"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_008df8"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="#008df8"
+            android:onClick="@{()->event.color(`#008df8`)}"
+            app:layout_constraintEnd_toStartOf="@id/tv_fef0f0"
+            app:layout_constraintStart_toEndOf="@id/tv_57d437"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_fef0f0"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="#fef0f0"
+            android:onClick="@{()->event.color(`#fef0f0`)}"
+            app:layout_constraintEnd_toStartOf="@id/tv_000000"
+            app:layout_constraintStart_toEndOf="@id/tv_008df8"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_000000"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="#000000"
+            android:onClick="@{()->event.color(`#000000`)}"
+            app:layout_constraintEnd_toStartOf="@id/tv_0ce8d4"
+            app:layout_constraintStart_toEndOf="@id/tv_fef0f0"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_0ce8d4"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="#0ce8d4"
+            android:onClick="@{()->event.color(`#0ce8d4`)}"
+            app:layout_constraintEnd_toStartOf="@id/tv_e80d0d"
+            app:layout_constraintStart_toEndOf="@id/tv_000000"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_e80d0d"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="#e80d0d"
+            android:onClick="@{()->event.color(`#e80d0d`)}"
+            app:layout_constraintEnd_toStartOf="@id/tv_00b42e"
+            app:layout_constraintStart_toEndOf="@id/tv_0ce8d4"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_00b42e"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="#00b42e"
+            android:onClick="@{()->event.color(`#00b42e`)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_e80d0d"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

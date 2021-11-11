@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="option"
+            type="com.jjl.dxz.platform.meeting.bean.pojo.Question.Option" />
+    </data>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_question"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginTop="8dp"
+        app:endIconDrawable="@drawable/ic_delete"
+        app:endIconMode="custom"
+        app:endIconTint="@android:color/holo_red_dark"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/option_num" />
+    </com.google.android.material.textfield.TextInputLayout>
+</layout>
