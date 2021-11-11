@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.jjl.dxz.platform.meeting.widget.whiteboard.constant.WhiteBoardTool" />
+
+        <variable
+            name="event"
+            type="com.jjl.dxz.platform.meeting.widget.whiteboard.MyWhiteBoard.Event" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/img_desc"
+            android:onClick="@{()->event.close()}"
+            android:padding="6dp"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.jjl.dxz.platform.meeting.widget.whiteboard.ui.WhiteBoardFrameLayout
+                android:id="@+id/whiteboard"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center" />
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/iv_pencil"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:contentDescription="@string/img_desc"
+            android:onClick="@{()->event.selectTool(WhiteBoardTool.PENCIL)}"
+            android:src="@mipmap/ic_tools_pencil"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/iv_line"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_line"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:contentDescription="@string/img_desc"
+            android:onClick="@{()->event.selectTool(WhiteBoardTool.STRAIGHT)}"
+            android:src="@mipmap/ic_tools_line"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/iv_rect"
+            app:layout_constraintStart_toEndOf="@id/iv_pencil" />
+
+        <ImageView
+            android:id="@+id/iv_rect"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:contentDescription="@string/img_desc"
+            android:onClick="@{()->event.selectTool(WhiteBoardTool.RECT)}"
+            android:src="@mipmap/ic_tools_rect"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/iv_ring"
+            app:layout_constraintStart_toEndOf="@id/iv_line" />
+
+        <ImageView
+            android:id="@+id/iv_ring"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:contentDescription="@string/img_desc"
+            android:onClick="@{()->event.selectTool(WhiteBoardTool.CIRCLE)}"
+            android:src="@mipmap/ic_tools_ring"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/iv_text"
+            app:layout_constraintStart_toEndOf="@id/iv_rect" />
+
+        <ImageView
+            android:id="@+id/iv_text"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:contentDescription="@string/img_desc"
+            android:onClick="@{()->event.selectTool(WhiteBoardTool.TEXT)}"
+            android:src="@mipmap/ic_tools_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/iv_revoke"
+            app:layout_constraintStart_toEndOf="@id/iv_ring" />
+
+        <ImageView
+            android:id="@+id/iv_revoke"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:contentDescription="@string/img_desc"
+            android:onClick="@{()->event.revoke()}"
+            android:src="@mipmap/ic_tools_previous"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/iv_clear"
+            app:layout_constraintStart_toEndOf="@id/iv_text" />
+
+        <ImageView
+            android:id="@+id/iv_clear"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:contentDescription="@string/img_desc"
+            android:onClick="@{()->event.clear()}"
+            android:src="@mipmap/ic_tools_clear"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/iv_color"
+            app:layout_constraintStart_toEndOf="@id/iv_revoke" />
+
+        <ImageView
+            android:id="@+id/iv_color"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@android:color/black"
+            android:contentDescription="@string/img_desc"
+            android:onClick="@{()->event.color()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_clear" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

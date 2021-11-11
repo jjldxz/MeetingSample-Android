@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data />
+
+    <TextView
+        android:id="@+id/tv_addOption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center"
+        android:drawablePadding="12dp"
+        android:gravity="center"
+        android:paddingTop="8dp"
+        android:text="@string/add_option"
+        android:textColor="#005BFF"
+        android:textSize="16sp"
+        app:drawableStartCompat="@drawable/ic_add" />
+</layout>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="event"
+            type="com.jjl.dxz.platform.meeting.ui.MeetingActivity.Event" />
+
+        <variable
+            name="vm"
+            type="com.jjl.dxz.platform.meeting.vm.meeting.MeetingViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.MeetingActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/abl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/mt"
+                style="@style/Widget.MaterialComponents.Toolbar.Primary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:menu="@menu/menu_meeting"
+                app:title="@string/app_name" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_video"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:clipToPadding="false"
+            android:padding="8dp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toTopOf="@id/cl_bottom"
+            app:layout_constraintTop_toBottomOf="@id/abl"
+            app:spanCount="2"
+            tools:itemCount="12"
+            tools:listitem="@layout/item_meeting_video" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/purple_500"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageButton
+                android:id="@+id/ib_audio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/img_desc"
+                android:onClick="@{()->vm.changeMicState(0)}"
+                android:padding="16dp"
+                android:src="@drawable/ic_mic_off"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageButton
+                android:id="@+id/ib_video"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/img_desc"
+                android:onClick="@{()->vm.changeCameraState(0)}"
+                android:padding="16dp"
+                android:src="@drawable/ic_videocam_off"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ib_audio" />
+
+            <ImageButton
+                android:id="@+id/ib_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/img_desc"
+                android:onClick="@{()->event.share()}"
+                android:padding="16dp"
+                android:src="@drawable/ic_share"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/img_desc"
+                android:onClick="@{()->event.openMemberList()}"
+                android:padding="16dp"
+                android:src="@drawable/ic_member"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/ib_share" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.jjl.dxz.platform.meeting.widget.whiteboard.MyWhiteBoard
+            android:id="@+id/wb"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="#333333"
+            android:visibility="@{vm.showWhiteboard}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/abl" />
+
+        <FrameLayout
+            android:id="@+id/fl_myShare"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="#333333"
+            android:visibility="@{vm.showMyShareScreen}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/abl"
+            tools:visibility="gone">
+
+            <Button
+                android:id="@+id/btn_stopShare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@android:drawable/ic_menu_close_clear_cancel"
+                android:text="@string/stop_share" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_remoteShare"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="#333333"
+            android:visibility="@{vm.showShareScreen}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/abl"
+            tools:visibility="gone" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

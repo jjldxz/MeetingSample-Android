@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.jjl.dxz.platform.meeting.vm.AppointMeetingViewModel" />
+
+        <variable
+            name="event"
+            type="com.jjl.dxz.platform.meeting.ui.AppointMeetingActivity.Event" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="8dp"
+        android:paddingTop="8dp"
+        tools:context=".ui.AppointMeetingActivity">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/et_meetingTheme"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/meeting_theme"
+                android:text="@={vm.meetingTheme}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_beginTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:onClick="@{()->event.beginTime()}"
+            app:layout_constraintTop_toBottomOf="@id/et_meetingTheme">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/begin_time" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{vm.beginTime}"
+                tools:text="2021年10月13日 周三 11:31" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_endTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:onClick="@{()->event.meetingDuration()}"
+            app:layout_constraintTop_toBottomOf="@id/ll_beginTime">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/meeting_duration" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{@string/placeholder_min(vm.meetingDuration)}"
+                tools:text="120分钟" />
+        </LinearLayout>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/sm_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:checked="@={vm.needPwd}"
+            android:text="@string/join_meeting_pwd"
+            app:layout_constraintTop_toBottomOf="@id/ll_endTime" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/et_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:visibility="@{vm.showPwd}"
+            app:layout_constraintTop_toBottomOf="@id/sm_pwd"
+            app:passwordToggleEnabled="true"
+            tools:visibility="gone">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/join_meeting_pwd"
+                android:inputType="textPassword"
+                android:text="@={vm.meetingPwd}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/sm_muteSound"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:checked="@={vm.muteSound}"
+            android:text="@string/member_join_meeting_mute_sound"
+            app:layout_constraintTop_toBottomOf="@id/et_pwd" />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="24dp"
+            android:onClick="@{()->vm.done()}"
+            android:text="@string/done"
+            app:layout_constraintTop_toBottomOf="@id/sm_muteSound" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
