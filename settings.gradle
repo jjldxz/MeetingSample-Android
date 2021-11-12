@@ -1,13 +1,9 @@
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
-        maven {
-            allowInsecureProtocol true
-            url 'http://nexus.jjldxz.com/repository/maven-snapshots/'
-        }
         google()
-        maven { url 'https://www.jitpack.io' }
         mavenCentral()
+        maven { url 'https://www.jitpack.io' }
     }
 }
 rootProject.name = "MeetingSample_Android"

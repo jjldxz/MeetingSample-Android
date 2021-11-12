@@ -51,22 +51,7 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
 }
 
-configurations.all {
-    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
-}
-
 dependencies {
-//    implementation project(path: ':sdk')
-
-    implementation ('com.jjldxz:open-platform-meeting:1.0.3-SNAPSHOT'){
-        changing true
-    }
-
-    //room
-//    def room_version = "2.3.0"
-//    implementation "androidx.room:room-runtime:$room_version"
-//    annotationProcessor "androidx.room:room-compiler:$room_version"
-//    implementation "androidx.room:room-rxjava3:$room_version"
-
+    implementation 'io.github.jjldxz:open-platform:1.0.2'
     implementation "androidx.recyclerview:recyclerview:1.2.1"
 }
