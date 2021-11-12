@@ -1,7 +1,6 @@
 package com.jjl.dxz.platform.meeting.bean.req;
 
 import com.google.gson.annotations.SerializedName;
-import com.jjl.dxz.platform.meeting.sdk.util.GsonUtils;
 
 import java.util.List;
 

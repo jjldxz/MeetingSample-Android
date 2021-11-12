@@ -2,9 +2,9 @@ package com.jjl.dxz.platform.meeting.widget.whiteboard.manage;
 
 import com.jjl.dxz.platform.meeting.bean.BaseCommand;
 import com.jjl.dxz.platform.meeting.constant.Message;
-import com.jjl.dxz.platform.meeting.sdk.mananger.PlatformManager;
-import com.jjl.dxz.platform.meeting.sdk.mananger.callback.ResultCallback;
-import com.jjl.dxz.platform.meeting.sdk.util.GsonUtils;
+import com.jjl.dxz.platform.sdk.mananger.PlatformManager;
+import com.jjl.dxz.platform.sdk.mananger.callback.ResultCallback;
+import com.jjl.dxz.platform.sdk.util.GsonUtils;
 import com.jjl.dxz.platform.meeting.widget.whiteboard.bean.Line;
 import com.jjl.dxz.platform.meeting.widget.whiteboard.bean.Rect;
 import com.jjl.dxz.platform.meeting.widget.whiteboard.bean.Revoke;

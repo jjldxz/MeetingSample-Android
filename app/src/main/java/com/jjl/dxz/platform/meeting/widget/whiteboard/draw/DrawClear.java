@@ -2,8 +2,8 @@ package com.jjl.dxz.platform.meeting.widget.whiteboard.draw;
 
 
 import com.jjl.dxz.platform.meeting.constant.Message;
-import com.jjl.dxz.platform.meeting.sdk.mananger.callback.ResultCallback;
-import com.jjl.dxz.platform.meeting.sdk.util.GsonUtils;
+import com.jjl.dxz.platform.sdk.mananger.callback.ResultCallback;
+import com.jjl.dxz.platform.sdk.util.GsonUtils;
 import com.jjl.dxz.platform.meeting.widget.whiteboard.bean.WhiteBoardCommand;
 import com.jjl.dxz.platform.meeting.widget.whiteboard.constant.WhiteBoardDrawType;
 import com.jjl.dxz.platform.meeting.widget.whiteboard.manage.WhiteboardManager;

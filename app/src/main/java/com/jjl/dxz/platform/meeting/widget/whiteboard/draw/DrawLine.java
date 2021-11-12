@@ -5,8 +5,8 @@ import android.text.TextUtils;
 import android.view.MotionEvent;
 
 import com.jjl.dxz.platform.meeting.constant.Message;
-import com.jjl.dxz.platform.meeting.sdk.mananger.callback.ResultCallback;
-import com.jjl.dxz.platform.meeting.sdk.util.GsonUtils;
+import com.jjl.dxz.platform.sdk.mananger.callback.ResultCallback;
+import com.jjl.dxz.platform.sdk.util.GsonUtils;
 import com.jjl.dxz.platform.meeting.widget.whiteboard.bean.Line;
 import com.jjl.dxz.platform.meeting.widget.whiteboard.constant.WhiteBoardDrawType;
 import com.jjl.dxz.platform.meeting.widget.whiteboard.manage.WhiteboardManager;

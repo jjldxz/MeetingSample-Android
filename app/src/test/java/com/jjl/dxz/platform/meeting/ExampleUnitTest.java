@@ -1,4 +1,4 @@
-package com.jjl.dxz.platform.meeting.sdk.mananger;
+package com.jjl.dxz.platform.sdk.mananger;
 
 import org.junit.Test;
 
