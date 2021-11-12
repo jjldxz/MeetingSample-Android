@@ -1,1 +1,1 @@
-# MeetingSample_Android
+# MeetingSample-Android
